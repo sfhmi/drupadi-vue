@@ -1,0 +1,53 @@
+.vdp-datepicker {
+    .vdp-datepicker__calendar {
+        transition: all ease-in-out 0.2s;
+        position: absolute;
+        z-index: 100;
+        background: #fff;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        border: 2px solid $primary;
+        margin-top: 10px;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -9px;
+            right: 18px;
+            border: 1px 2px 2px solid $primary;
+            border-bottom: 8px solid $primary;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            /* border-radius: 0px 9px 9px 2px; */
+        }
+    }
+    .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
+    .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
+    .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+        background-color: $primary;
+        border-radius: 50%;
+        color: $white;
+        border: none;
+    }
+    .vdp-datepicker__calendar {
+        .selected {
+            background-color: $primary !important;
+            border-radius: 50%;
+            color: $white;
+            border: none;
+        }
+    }
+    input {
+        background: transparent;
+        border: 0px;
+        outline: none;
+        /* font-size: 16px; */
+        font-weight: 600;
+        font-size: 14px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        cursor: text;
+    }
+}

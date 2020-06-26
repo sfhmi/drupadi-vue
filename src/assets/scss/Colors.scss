@@ -1,0 +1,46 @@
+// Custom Variables
+//
+// You can override the existing bootstrap variables.
+// See the available variables at vendor/bootstrap/scss/_variables.scss.
+
+
+//
+// Color system
+//
+
+$white:     #fff !default;
+$gray-base: #181b1e !default;
+$gray-100:  #f0f3f5 !default; // lighten($gray-base, 85%);
+$gray-200:  #e4e7ea !default; // lighten($gray-base, 80%);
+$gray-300:  #c8ced3 !default; // lighten($gray-base, 70%);
+$gray-400:  #acb4bc !default; // lighten($gray-base, 60%);
+$gray-500:  #8f9ba6 !default; // lighten($gray-base, 50%);
+$gray-600:  #73818f !default; // lighten($gray-base, 40%);
+$gray-700:  #5c6873 !default; // lighten($gray-base, 30%);
+$gray-800:  #2f353a !default; // lighten($gray-base, 10%);
+$gray-900:  #23282c !default; // lighten($gray-base, 5%);
+$black:     #000 !default;
+
+$gray:       #4F4F4F !default;
+$blue:       #6360FE !default;
+$indigo:     #6610f2 !default;
+$purple:     #A276AE !default;
+$pink:       #e83e8c !default;
+$red:        #EB5757 !default;
+$orange:     #f8cb00 !default;
+$yellow:     #F2994A !default;
+$green:      #27AE60 !default;
+$teal:       #20c997 !default;
+$cyan:       #17a2b8 !default;
+$light-blue: #63c2de !default;
+$pastel-red:  #FE6960 !default; 
+$pastel-yellow: #FEB560 !default;
+$pastel-blue: #6360FE !default;
+$light-primary: #ae9fb3 !default;
+
+$primary:       $purple;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$secondary:     lighten($color: $primary, $amount: 30);

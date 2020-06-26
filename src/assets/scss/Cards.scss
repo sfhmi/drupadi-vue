@@ -1,0 +1,1657 @@
+.card {
+    border-radius: 10px;
+    border: 0px;
+    margin-bottom: 1rem;
+}
+.card-trip {
+    border-radius: 10px;
+    border: none;
+    margin: 0px;
+    color: $black;
+    font-weight: 600;
+    
+    .card-header {
+        border-bottom: none;
+        font-weight: 600;
+        border-radius: 10px 10px 0px 0px;
+        color: white;
+        font-size: 14px;
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: unset;
+        z-index: 1;
+        label {
+            margin: 0px;
+            text-transform: uppercase;
+        }
+
+        .draft {
+            background-color: $gray-300;
+        }
+
+        .waiting {
+            background-color: $yellow;
+        }
+
+        .confirmed {
+        }
+    }
+
+    .card-body {
+        padding: 10px 15px;
+        position: unset;
+        z-index: 1;
+        p {
+            margin-bottom: 0px;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 22px;
+            max-height: 3em;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        small {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .destination {
+            width: 150px;
+        }
+
+        
+        .division {
+            width: 150px;
+        }
+
+        .dates {
+            width: 215px;
+        }
+
+        .total-pax {
+            width: auto;
+            .list-travelers {
+                position: relative;
+                &:hover {
+                    .travelers-tolltip {
+                        display: flex;
+                    }
+                }
+                .travelers-tolltip {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    bottom: 25px;
+                    right: 0px;
+                    padding: 10px;
+                    background-color: black;
+                    border-radius: 6px;
+                    color: white;
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: -10px;
+                        right: 10px;
+                        border-top: 5px solid black;
+                        border-right: 5px solid transparent;
+                        border-left: 5px solid transparent;
+                        border-bottom: 5px solid transparent;
+                    }
+
+                    p {
+                        color: white;;
+                    }
+                }
+            }
+        }
+
+        
+
+        .workers {
+            display: flex;
+            flex-direction: row;
+            margin-right: 100px;
+            width: 100px;
+            img {
+                width: 23px;
+                height: 23px;
+                border: 1px solid white;
+                border-radius: 50%;
+                margin-left: -6px;
+                object-fit: cover;
+            }
+
+            div {
+                width: 23px;
+                height: 23px;
+                border: 1px solid white;
+                background-color: $primary;
+                color: white;
+                border-radius: 50%;
+                margin-left: -6px;
+                font-size: 9px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .trip-by {
+            display: flex;
+            flex-direction: row;
+            margin-right: 15px;
+            width: 200px;
+            img {
+                object-fit: contain;
+                width: 35px;
+                height: 35px;
+                margin-left: -10px;
+                background-color: $gray-100;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+        }
+        .price-travel {
+            width: 200px;
+            text-align: end;
+            margin-left: auto;
+            p {
+                width: unset;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .waiting {
+        background-color: $yellow;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .cancelled,
+    .rejected {
+        color: white;
+        background-color: $red;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .completed,
+    .approved {
+        background-color: $green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .draft {
+        background-color: $gray;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .status-draft {
+        color: $gray;
+    }
+
+    .status-booked {
+        color: $yellow;
+    }
+
+    .status-hold {
+        color: $yellow;
+    }
+
+    .status-cancelled {
+        color: $red;
+    }
+
+    .status-issued {
+        color: $green;
+    }
+    .card-footer {
+        position: unset;
+        z-index: 1;
+        padding: 10px 15px;
+        border-radius: 0px 0px 10px 10px;
+        .accomodations {
+            i {
+                font-size: 15px;
+                color: $gray-500;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.card-travelers {
+    border: 0px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-color: $white;
+    &:first-child {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    &:last-child {
+        border-radius: 0px 0px 10px 10px;
+        margin-bottom: 10px;
+        .card-body {
+            padding-bottom: 20px;
+        }
+    }
+
+    .card-body {
+        padding-bottom: 0px;
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+    small {
+        font-weight: normal;
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    .traveler-picture {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 80px;
+        margin-bottom: 0px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .traveler-profile {
+        margin-right: 212px;
+        width: 250px;
+    }
+
+    .traveler-services {
+        margin-left: auto;
+        i {
+            color: $primary;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+    }
+
+    .btn-delete {
+        i {
+            color: $primary;
+        }
+    }
+}
+
+.card-ticket {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    border: 0px;
+    figure {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+        .airplane {
+            width: 80%;
+            object-fit: contain;
+        }
+
+        .hotel {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 0px 0px 10px;
+            object-fit: cover;
+        }
+    }
+
+    .card-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0px;
+        }
+        .download-option {
+            button {
+                outline: none;
+                padding: 0px;
+            }
+        }
+    }
+}
+
+.card-table {
+    background-color: $white;
+    border-radius: 10px;
+    table {
+        thead {
+            background-color: lighten($color: $primary, $amount: 30);
+            tr {
+                th {
+                    color: $primary;
+                    &:first-child {
+                        border-radius: 10px 0px 0px 0px;
+                    }
+                    &:last-child {
+                        border-radius: 0px 10px 0px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-trip-detail {
+    border-radius: 10px;
+    color: $black;
+    p {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    .card-header {
+        border-radius: 10px 10px 0px 0px;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 7px 30px 7px 15px;
+        i {
+            color: $primary;
+        }
+        .total-pax {
+            width: auto;
+            .list-travelers {
+                position: relative;
+                &:hover {
+                    .travelers-tolltip {
+                        display: flex;
+                    }
+                }
+                .travelers-tolltip {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    bottom: 25px;
+                    right: 0px;
+                    padding: 10px;
+                    background-color: black;
+                    border-radius: 6px;
+                    color: white;
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: -10px;
+                        right: 10px;
+                        border-top: 5px solid black;
+                        border-right: 5px solid transparent;
+                        border-left: 5px solid transparent;
+                        border-bottom: 5px solid transparent;
+                    }
+
+                    p {
+                        color: white;;
+                    }
+                }
+            }
+        }
+    }
+    .card-body {
+        padding: 10px 15px;
+        p {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 0px;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 22px;
+            max-height: 3em;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        small {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .transportation {
+            margin-right: 20px;
+            width: 230px;
+            .transport-logo {
+                img {
+                    height: 20px;
+                    margin-right: 10px;
+                    object-fit: contain;
+                }
+            }
+        }
+        .hotel {
+            width: 280px;
+            .hotel-rate {
+                display: flex;
+                padding-left: 0px;
+                margin-bottom: 0px;
+                .rate {
+                    list-style: none;
+                    i {
+                        color: lighten($color: $yellow, $amount: 20);
+                        font-size: 10px;
+                    }
+
+                    .rated {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+        .departure-arrival {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 30px;
+            width: 230px;
+
+            .h3 {
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+        }
+
+        .duration {
+            margin-right: 20px;
+            width: 280px;
+        }
+
+        .facilities {
+            width: 230px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            img {
+                width: 25px;
+                object-fit: contain;
+            }
+        }
+
+        .title,
+        .categories {
+            width: 230px;
+            margin-right: 30px;
+        }
+
+        .description {
+            width: 280px;
+        }
+
+        .workers {
+            display: flex;
+            flex-direction: row;
+            img {
+                width: 23px;
+                height: 23px;
+                border: 1px solid white;
+                border-radius: 50%;
+                margin-left: -6px;
+                object-fit: cover;
+            }
+
+            div {
+                width: 23px;
+                height: 23px;
+                border: 1px solid white;
+                background-color: $primary;
+                color: white;
+                border-radius: 50%;
+                margin-left: -6px;
+                font-size: 9px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .status,
+        .passengers {
+            margin-right: 30px;
+            width: 100px;
+        }
+
+        .booking-code {
+            // margin-right: 30px;
+            width: 130px;
+        }
+
+        .time-limit {
+            width: 200px;
+        }
+        .price-travel {
+            text-align: right;
+            .trip-by {
+                display: flex;
+                flex-direction: column;
+                // margin-right: 15px;
+                img {
+                    width: 115px;
+                    height: 45px;
+                    object-fit: contain;
+                }
+            }
+            .price {
+                width: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                p {
+                    width: unset;
+                }
+            }
+        }
+    }
+
+    .card-footer {
+        border-radius: 0px 0px 10px 10px;
+        border: 0px;
+        p {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: $white;
+            margin-bottom: 0px;
+        }
+    }
+
+    .booked {
+        background-color: $yellow;
+        color: white;
+    }
+    .cancelled {
+        color: white;
+        background-color: $red;
+    }
+    .issued {
+        background-color: $green;
+        color: white;
+    }
+    .draft {
+        background-color: $gray;
+        color: white;
+    }
+
+    .status-booked {
+        color: $yellow;
+    }
+
+    .status-hold {
+        color: $yellow;
+    }
+
+    .status-confirmed {
+        color: $green;
+    }
+
+    .status-ticketed {
+        color: $green;
+    }
+
+    .status-cancelled {
+        color: $red;
+    }
+}
+
+.card-flights {
+    // margin-bottom: 10px;
+    background-color: $white;
+    // border-radius: 10px;
+
+    &:first-child {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    &:last-child {
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    button {
+        outline: none;
+    }
+    hr {
+        border-top: 1px solid lighten($color: $primary, $amount: 30) !important;
+        margin: 0px;
+    }
+
+    .card-header {
+        p {
+            color: $white;
+            margin-bottom: 0px;
+        }
+        
+        button {
+            font-size: 14px;
+        }
+    }
+
+    .card-body {
+        position: relative;
+        padding: 15px;
+        p {
+            font-size: 14px;
+        }
+        b {
+            font-size: 14px;
+        }
+        .overflow {
+            overflow: scroll;
+            overflow-y: hidden;
+            .fares {
+                width: auto;
+                margin-bottom: 5px;
+                // height: 86px;
+
+                input[type="radio"]:checked ~ .options {
+                    border: 1px solid $primary;
+                }
+                .options {
+                    width: 140px;
+                    height: 65px;
+                    border: 1px solid $gray-300;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    padding: 10px;
+                    position: relative;
+                    margin-bottom: 0px;
+                    p {
+                        margin-bottom: 0px;
+                    }
+                    .policy-level {
+                        &-green {
+                            position: absolute;
+                            top: 0px;
+                            right: 13px;
+                            width: 80%;
+                            height: 4px;
+                            border-radius: 0px 0px 10px 10px;
+                            background-color: $green;
+                        }
+                        &-red {
+                            position: absolute;
+                            top: 0px;
+                            right: 13px;
+                            width: 80%;
+                            height: 4px;
+                            border-radius: 0px 0px 10px 10px;
+                            background-color: $red;
+                        }
+                        &-yellow {
+                            position: absolute;
+                            top: 0px;
+                            right: 13px;
+                            width: 80%;
+                            height: 4px;
+                            border-radius: 0px 0px 10px 10px;
+                            background-color: $yellow;
+                        }
+                        &-black {
+                            position: absolute;
+                            top: 0px;
+                            right: 13px;
+                            width: 80%;
+                            height: 4px;
+                            border-radius: 0px 0px 10px 10px;
+                            background-color: $black;
+                        }
+                        &-purple {
+                            position: absolute;
+                            top: 0px;
+                            right: 13px;
+                            width: 80%;
+                            height: 4px;
+                            border-radius: 0px 0px 10px 10px;
+                            background-color: $purple;
+                        }
+                    }
+                }
+            }
+        }
+        .policy-level {
+            &-green {
+                position: absolute;
+                top: 15px;
+                right: 0px;
+                width: 5px;
+                height: 80%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $green;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-red {
+                position: absolute;
+                top: 15px;
+                right: 0px;
+                width: 5px;
+                height: 80%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $red;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-yellow {
+                position: absolute;
+                top: 15px;
+                right: 0px;
+                width: 5px;
+                height: 80%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $yellow;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-black {
+                position: absolute;
+                top: 15px;
+                right: 0px;
+                width: 5px;
+                height: 80%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $black;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-purple {
+                position: absolute;
+                top: 15px;
+                right: 0px;
+                width: 5px;
+                height: 80%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $purple;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+        }
+        .flight-schedule {
+            margin-bottom: 0px;
+            .elips {
+                position: relative;
+                list-style: none;
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    left: -30px;
+                    width: 10px;
+                    height: 10px;
+                    background-color: $primary;
+                    border-radius: 50%;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 18px;
+                    left: -26px;
+                    width: 0px;
+                    height: 100%;
+                    border: 1px dashed lighten($color: $primary, $amount: 30);
+                }
+
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .transits {
+        border-radius: 10px;
+        background-color: lighten($color: $primary, $amount: 35);
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+.card-booking {
+    .card-header {
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: none;
+        font-size: 14px;
+        color: $white;
+    }
+
+    .card-body {
+        position: relative;
+        p {
+            font-weight: 600;
+        }
+        small {
+            font-weight: bold;
+        }
+        .policy-level {
+            &-green {
+                position: absolute;
+                top: 20px;
+                right: 0px;
+                width: 5px;
+                height: 70%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $green;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-red {
+                position: absolute;
+                top: 20px;
+                right: 0px;
+                width: 5px;
+                height: 70%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $red;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-yellow {
+                position: absolute;
+                top: 20px;
+                right: 0px;
+                width: 5px;
+                height: 70%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $yellow;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+            &-black {
+                position: absolute;
+                top: 20px;
+                right: 0px;
+                width: 5px;
+                height: 70%;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $black;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    .policy-level-description {
+                        text-transform: capitalize;
+                        position: absolute;
+                        width: 300px;
+                        right: 15px;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            border-left: 5px solid black;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            position: absolute;
+                            right: -10px;
+                        }
+                    }
+                }
+                .policy-level-description {
+                    display: none;
+                }
+            }
+        }
+    }
+    .transits {
+        border-radius: 10px;
+        background-color: lighten($color: $primary, $amount: 35);
+        &:last-child {
+            display: none;
+        }
+    }
+    .flight-schedule {
+        margin-bottom: 0px;
+        .elips {
+            position: relative;
+            list-style: none;
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 5px;
+                left: -30px;
+                width: 10px;
+                height: 10px;
+                background-color: $primary;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 18px;
+                left: -26px;
+                width: 0px;
+                height: 100%;
+                border: 1px dashed lighten($color: $primary, $amount: 30);
+            }
+
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.card-summary-total {
+    img {
+        width: 100%;
+        height: 75px;
+        object-fit: contain;
+    }
+}
+
+.card-traveler {
+    margin-bottom: 0px;
+    .card-header {
+        padding: 15px;
+        background-color: $white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        figure {
+            width: 35px;
+            height: 35px;
+            margin-bottom: 0px;
+            margin-right: 10px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+        img {
+            width: 12px;
+            margin-right: 0px;
+        }
+    }
+
+    .card-body {
+        .form-group {
+            border: 0px;
+            position: relative;
+            label {
+                font-size: 12px;
+                color: $gray-500;
+            }
+            .form-control {
+                background-color: $gray-200;
+                border-radius: 5px;
+                border: 1px solid $gray-300;
+                -webkit-appearance: none;
+            }
+            i {
+                position: absolute;
+                top: 40px;
+                right: 12px;
+                color: #acb4bc;
+            }
+            img {
+                width: 20px;
+                border-radius: 0%;
+                margin-right: 15px;
+                position: absolute;
+                top: 27px;
+                right: 8px;
+            }
+        }
+    }
+    img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .id-employees {
+        position: relative;
+        label {
+            position: absolute;
+            top: 7px;
+            left: 10px;
+        }
+
+        input {
+            padding-left: 31px;
+        }
+    }
+}
+
+.card-status {
+    .status-HOLD {
+        color: $yellow;
+    }
+    .status-BOOKED {
+        color: $yellow;
+    }
+    .status-CONFIRMED {
+        color: $green;
+    }
+    .status-TICKETED {
+        color: $green;
+    }
+    .status-CANCELLED {
+        color: $red;
+    }
+
+    .HOLD {
+        background-color: $yellow;
+    }
+    .BOOKED {
+        background-color: $yellow;
+    }
+    .CONFIRMED {
+        background-color: $green;
+    }
+    .TICKETED {
+        background-color: $green;
+    }
+    .CANCELLED {
+        background-color: $red;
+    }
+
+    .card-header {
+        // background-color: $yellow;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: none;
+        color: $white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 15px;
+        font-weight: 600;
+        height: 40px;
+        p {
+            margin-bottom: 0px;
+        }
+    }
+
+    .card-body {
+        padding: 15px;
+        border-bottom: 2px solid lighten($color: $primary, $amount: 35);
+        &:last-child {
+            border-bottom: 0px;
+        }
+    }
+
+    .card-booking {
+        border: 2px solid lighten($color: $primary, $amount: 35);
+        .card-header {
+            background-color: lighten($color: $primary, $amount: 35);
+            color: $primary;
+            border-radius: 7px 7px 0px 0px;
+            font-size: 14px;
+        }
+
+        .card-body {
+            border-bottom: none;
+            p {
+                font-weight: 600;
+            }
+
+            small {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.card-chat {
+    border: 1px solid lighten($color: $primary, $amount: 35);
+    .card-header {
+        border-radius: 10px 10px 0px 0px;
+        background: $white;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        padding: 10px 15px;
+        border-bottom: 1px solid lighten($color: $primary, $amount: 35);
+    }
+    .card-body {
+        padding: 15px;
+        height: 400px;
+        overflow: scroll;
+        .chat-container {
+            .chat-admin {
+                padding-left: 0px;
+                display: flex;
+                ul.chat-list {
+                    padding-left: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    li {
+                        list-style: none;
+                        max-width: 90%;
+                        width: auto;
+                        margin-bottom: 15px;
+                        .card {
+                            margin-bottom: 0px;
+                            background-color: $white;
+                            border: 1px solid lighten($color: $primary, $amount: 35);
+                            .card-body {
+                                height: unset;
+                                p {
+                                    margin-bottom: 5px;
+                                }
+                                .files {
+                                    width: fit-content;
+                                    width: -webkit-fit-content;
+                                    width: -moz-fit-content;
+                                    height: auto;
+                                    background-color: lighten($color: $primary, $amount: 35);
+                                    border-radius: 10px;
+                                    padding: 10px;
+                                    margin-bottom: 5px;
+
+                                    button {
+                                        border: 1px solid lighten($color: $primary, $amount: 20);
+                                        border-radius: 5px;
+                                        padding: 2px 5px !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .chat-user {
+                padding-left: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                ul.chat-list {
+                    padding-right: 15px;
+                    padding-left: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    li {
+                        list-style: none;
+                        max-width: 90%;
+                        width: auto;
+                        margin-bottom: 15px;
+                        .card {
+                            margin-bottom: 0px;
+                            background-color: $primary;
+                            .card-body {
+                                height: unset;
+                                p {
+                                    color: $white;
+                                    margin-bottom: 5px;
+                                }
+
+                                small {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card-footer {
+        background-color: $white;
+        border-top: 1px solid lighten($color: $primary, $amount: 35);
+        border-radius: 0px 0px 10px 10px;
+        .form-group {
+            margin: 0px;
+            position: relative;
+            .form-control {
+                padding: 0px 40px;
+            }
+            label.btn-files {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+            }
+            button.btn-sent {
+                position: absolute;
+                top: 6px;
+                right: 6px;
+            }
+        }
+    }
+}
+
+.card-overview {
+    width: 100%;
+    height: auto;
+    .card-header {
+        border-bottom: 2px solid lighten($color: $primary, $amount: 40);
+        font-weight: 600;
+        font-size: 14px;
+    }
+    h1 {
+        font-weight: 800;
+        font-size: 60px;
+    }
+}
+
+.card-badge {
+    position: relative;
+    .card-body {
+        padding: 10px 10px 10px 70px;
+    }
+
+    .text-card {
+        p {
+            font-weight: 600;
+        }
+    }
+
+    .badge {
+        &-red {
+            position: absolute;
+            // top: 16px;
+            left: 15px;
+            width: 20px;
+            height: 10px;
+            border-radius: 10px;
+            background: $pastel-red;
+        }
+        &-yellow {
+            position: absolute;
+            // top: 16px;
+            left: 15px;
+            width: 20px;
+            height: 10px;
+            border-radius: 10px;
+            background: $pastel-yellow;
+        }
+        &-blue {
+            position: absolute;
+            // top: 16px;
+            left: 15px;
+            width: 20px;
+            height: 10px;
+            border-radius: 10px;
+            background: $pastel-blue;
+        }
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+}
+.card-company {
+    .card-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .company-name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .card-images {
+                width: 48px;
+                height: 48px;
+                margin-right: 20px;
+                margin-bottom: 0px;
+                .image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+.card-vendors {
+    color: $black;
+    &:hover {
+        text-decoration: none;
+        color: $black;
+    }
+    .card-body {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        .card-img {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0px;
+            align-items: center;
+            img {
+                width: 65%;
+            }
+        }
+    }
+    .card-footer {
+        background-color: lighten($color: $primary, $amount: 35);
+        border-radius: 0px 0px 10px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        border-top: 0px;
+        p {
+            margin-bottom: 0px;
+            font-weight: 600;
+        }
+    }
+}
