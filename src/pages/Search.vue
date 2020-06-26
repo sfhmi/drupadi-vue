@@ -88,7 +88,10 @@
             </div>
             <div class="row mb-4">
                 <div class="col-lg-6 d-flex flex-row align-items-center">
-                    <b-button v-b-modal.modal-1>Launch demo modal</b-button>
+                    <button class="btn btn-primary btn-sm mr-5 text-white" @click="modalPassenger($event)">
+                        <i class="fas fa-plus fa-fw mr-2"></i>
+                        Add Passenger
+                    </button>
                     <div class="d-flex flex-row align-items-center">
                         <input type="checkbox" class="custom-checkbox" id="addme"  v-model="add_me" @change="addMe()">
                         <label for='addme' class="m-0" style="font-weight: 600; font-size: 14px;">Add me as passenger</label>
@@ -101,14 +104,12 @@
                 </div>
             </div>
         </div>
-        <b-modal id="modal-1" title="BootstrapVue">
-            <AddPassengerModal 
-                :travelers.sync="travelers"
-                :modal_passenger_is_open.sync="modal_passenger_is_open"
-                :user="user"
-                @savePassengerList="updatePassenger"
-            />
-        </b-modal>
+        <AddPassengerModal 
+            :travelers.sync="travelers"
+            :modal_passenger_is_open.sync="modal_passenger_is_open"
+            :user="user"
+            @savePassengerList="updatePassenger"
+        />
     </div>
 </template>
 

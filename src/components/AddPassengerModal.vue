@@ -1,15 +1,18 @@
 <template>
     <div>
-         <div id="addPassengerModal" class="modal fade show d-block" >
+         <div id="addPassengerModal" class="modal fade" 
+         tabindex="1" role="dialog"
+         :class="modal_passenger_is_open == true ? 'show' : '' "  
+         :style="modal_passenger_is_open == true ? 'display: block;  z-index: 1040;  display: block; padding-right: 8px;' : ''">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <!-- <div class="modal-header">
+                    <div class="modal-header">
                         <h3 class="font-weight-bold">Add Passengers</h3>
                         <div class="d-flex flex-row">
                             <button class="btn btn-secondary btn-sm  mr-2" data-dismiss="modal" @click="closeModal()">Cancel</button>
                             <button class="btn btn-primary btn-sm" data-dismiss="modal" @click="savePassengerList()">Save</button>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="modal-body">
                         <p class="mb-2 text-primary" style="font-weight: 600;">Employee List</p>
                         <div class="passenger-search">
