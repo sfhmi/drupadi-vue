@@ -74,7 +74,7 @@
                     </div>
                 </div>
                  <div class="col-lg-3 select-destinations" v-if="flightType == 'round_trip' ? true : false ">
-                    <div class="form-group w-100" >
+                    <div class="form-group w-100" > 
                         <div class="card border-0">
                             <div class="card-body date-flight" >
                                 <label class='text-muted'>Return Date</label>
@@ -88,10 +88,7 @@
             </div>
             <div class="row mb-4">
                 <div class="col-lg-6 d-flex flex-row align-items-center">
-                    <button class="btn btn-primary btn-sm mr-5 text-white" @click="modalPassenger($event)">
-                        <i class="fas fa-plus fa-fw mr-2"></i>
-                        Add Passenger
-                    </button>
+                    <b-button v-b-modal.passenger-modal variant="primary mr-3">Add Passenger</b-button>
                     <div class="d-flex flex-row align-items-center">
                         <input type="checkbox" class="custom-checkbox" id="addme"  v-model="add_me" @change="addMe()">
                         <label for='addme' class="m-0" style="font-weight: 600; font-size: 14px;">Add me as passenger</label>
@@ -104,6 +101,7 @@
                 </div>
             </div>
         </div>
+        
         <AddPassengerModal 
             :travelers.sync="travelers"
             :modal_passenger_is_open.sync="modal_passenger_is_open"
