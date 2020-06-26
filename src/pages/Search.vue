@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary py-1 px-3 m-1 round-circle" type="button" id="switch-destination"
+                    <button class="py-1 px-3 m-1 rounded-circle" type="button" id="switch-destination" 
                         @click='switchDestination'>
                     </button>
                 </div>
@@ -65,8 +65,8 @@
                  <div class="col-lg-3 select-destinations">
                     <div class="form-group w-100" >
                         <div class="card border-0">
-                            <div class="card-body date-flight" >
-                                <label class='text-muted'>Departure Date</label>
+                            <div class="card-body date-flight">
+                                <label class='text-muted mb-0'>Departure Date</label>
                                 <datepicker v-model='departureDateState.date' format='D, dd MMM yyyy' :disabled-dates="departureDateState.disabled"  @selected="selectDate"></datepicker>
                             </div>
                             <img src="" alt="" class="calendar-icon">
@@ -483,8 +483,6 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "../assets/scss/Colors.scss";
-    @import "../assets/scss/Datepicker.scss";
     .filter-top {
         .radio-filter {
             input[type="radio"] {
@@ -528,10 +526,11 @@ export default {
             .date-flight {
                 position: relative;
                 cursor: pointer;
-                label.date-label {
+                label {
                     font-weight: 400;
                     color: $gray-300;
                     margin-bottom: 0px;
+                    font-size: 12px;
                 }
                 span {
                     input {
@@ -596,14 +595,13 @@ export default {
                         margin: 0px;
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        // display: -webkit-box;
                         line-height: 24px;
                         max-height: 3em; 
                         -webkit-line-clamp: 1;
                         -webkit-box-orient: vertical;
                         p {
                             font-weight: bold;
-                            font-size: 24px;
+                            font-size: 24px !important;
                         }
                     }
                 }
@@ -651,6 +649,16 @@ export default {
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            background-color: $primary;
+            border: none;
+            outline: none;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            &:active, &:focus {
+                box-shadow: 0 0 0 0.2rem lighten($color: $primary, $amount: 30);
+            }
+            &:hover {
+                background-color: darken($color: $primary, $amount: 10);
+            } 
         }
     }
 </style>

@@ -17,8 +17,7 @@ export default {
 
 
 
-<style lang="scss" slot-scope>
-    @import "../assets/scss/Colors";
+<style scope lang="scss">
     .breadcrumb {
         background-color: lighten($color: $primary, $amount: 35) !important;
         border: 0px;

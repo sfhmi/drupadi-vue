@@ -65,21 +65,21 @@
                 <div class="d-flex flex-row align-items-center" v-if='guest_is_open == true'>
                     <div class="d-flex flex-row align-items-center">
                         <p class="mb-0 mr-1">Adult</p>
-                        <button class="btn btn-outline-primary" @click='addGuest("adultDec")'><i class="fa fa-minus fa-fw"></i></button>
+                        <button class="btn-outline-primary" @click='addGuest("adultDec")'><i class="fa fa-minus fa-fw"></i></button>
                         <p class="mx-2 my-0">{{ adult_guest.length }}</p>
-                        <button class="btn btn-outline-primary" @click='addGuest("adultInc")'><i class="fa fa-plus fa-fw"></i></button>
+                        <button class="btn-outline-primary" @click='addGuest("adultInc")'><i class="fa fa-plus fa-fw"></i></button>
                     </div>
                     <div class="d-flex flex-row align-items-center mx-3">
                         <p class="mb-0 mr-1">Child</p>
-                        <button class="btn btn-outline-primary" @click='addGuest("childDec")'><i class="fa fa-minus fa-fw"></i></button>
+                        <button class="btn-outline-primary" @click='addGuest("childDec")'><i class="fa fa-minus fa-fw"></i></button>
                         <p  class="mx-2 my-0">{{ child_guest.length  }}</p>
-                        <button class="btn btn-outline-primary" @click='addGuest("childInc")'><i class="fa fa-plus fa-fw"></i></button>
+                        <button class="btn-outline-primary" @click='addGuest("childInc")'><i class="fa fa-plus fa-fw"></i></button>
                     </div>
                     <div class="d-flex flex-row align-items-center">
                         <p class="mb-0 mr-1">Infant</p>
-                        <button class="btn btn-outline-primary" @click='addGuest("infantDec")'><i class="fa fa-minus fa-fw"></i></button>
+                        <button class="btn-outline-primary" @click='addGuest("infantDec")'><i class="fa fa-minus fa-fw"></i></button>
                         <p  class="mx-2 my-0">{{ infant_guest.length }}</p>
-                        <button class="btn btn-outline-primary" @click='addGuest("infantInc")'><i class="fa fa-plus fa-fw"></i></button>
+                        <button class="btn-outline-primary" @click='addGuest("infantInc")'><i class="fa fa-plus fa-fw"></i></button>
                     </div>
                 </div> 
             </div>
@@ -89,8 +89,8 @@
                             <img src="https://api.adorable.io/avatars/285/abott@adorable.png" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
                         <p class="mr-2 mb-0" style="width: 80px;">{{ adult.age_type }}</p>
                         <div class="position-relative">
-                            <select name="" id="" class='form-control mr-2'  v-model='adult.title'  @change='titleValidation(adult, indx)' style="width: 100px; -webkit-appearance: none; padding-right: 20px;">
-                                <option :key="indx" v-for='(title, indx) in title' :value="title.title" >
+                            <select name="" id="" class='form-control mr-2'  v-model='adult.title'  @change='titleValidation(adult, index)' style="width: 100px; -webkit-appearance: none; padding-right: 20px;">
+                                <option :key="idx" v-for='(title, idx) in title' :value="title.title" >
                                     {{ title.title }}</option>
                             </select>
                             <i class="fas fa-chevron-down position-absolute" style="top: 10px; right: 15px"></i>
@@ -107,7 +107,7 @@
                         <div class="position-relative">
                             <select name="" id="" class='form-control mr-2'
                                 v-model='child.title'  @change='titleValidation(child, index)' style="width: 100px; -webkit-appearance: none; padding-right: 20px;">
-                                <option :key="indx" v-for='(title, indx) in title' :value="title.title" >
+                                <option :key="idx" v-for='(title, idx) in title' :value="title.title" >
                                     {{ title.title }}</option>
                             </select>
                             <i class="fas fa-chevron-down position-absolute" style="top: 10px; right: 15px"></i>
@@ -124,7 +124,7 @@
                         <div class="position-relative">
                             <select name="" id="" class='form-control mr-2'
                                 v-model='infant.title'  @change='titleValidation(infant, index)' style="width: 100px; -webkit-appearance: none; padding-right: 20px;">
-                                <option :key="indx" v-for='(title, indx) in title' :value="title.title" >
+                                <option :key="idx" v-for='(title, idx) in title' :value="title.title" >
                                     {{ title.title }}</option>
                             </select>
                             <i class="fas fa-chevron-down position-absolute" style="top: 10px; right: 15px"></i>
@@ -137,22 +137,7 @@
                     </div>
                 </div> 
             </div>
-        </b-modal>
-         <div id="addPassengerModal" class="modal fade" 
-         tabindex="1" role="dialog"
-         :class="modal_passenger_is_open == true ? 'show' : '' "  
-         :style="modal_passenger_is_open == true ? 'display: block;  z-index: 1040;  display: block; padding-right: 8px;' : ''">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                      
-                    </div>
-                    
-                    
-                   
-                </div>
-            </div>
-        </div>    
+        </b-modal>    
     </div>
 </template>
 
@@ -286,16 +271,26 @@ export default {
                 this.closeModal()
             }
         },
-        titleValidation: function () {
+        titleValidation: function (data) {
+            setTimeout(() => {
+                if (data.age_type == 'adult') {
+                    if (data.title == 'Mr' || data.title == 'Ms' || data.title == 'Mrs') return
+                    // $.oc.flashMsg({ text: 'Your title does not match with the current age', class: 'error' })
+                    alert('Your title does not match with the current age')
+                } else {
+                    if (data.title == 'Mstr' || data.title == 'Miss') return 
+                    // $.oc.flashMsg({ text: 'Your title does not match with the current age', class: 'error' })
+                    alert('Your title does not match with the current age')
 
+                }
+            }, 100);
         }
 
     }
 }
 </script>
 
-<style lang="scss" slot-scope>
-    @import "../assets/scss/Colors.scss";
+<style scope lang="scss">
     #passenger-modal {
         border-radius: 10px;
         .add-guest-passengers {
@@ -351,6 +346,9 @@ export default {
         .modal-body {
             padding: 0px;
             border-bottom: 1px solid lighten($color: $primary, $amount: 35);
+            p.text-primary {
+                color:  $primary !important;
+            }
             .passengers-container {
                 width: 100%;
                 padding: 9px 15px;
@@ -485,7 +483,6 @@ export default {
             width: 100%;
             overflow: scroll;
             transition: all .35s ease;
-
             p {
                 font-size: 14px;
             }

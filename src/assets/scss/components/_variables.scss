@@ -36,7 +36,6 @@ $light-blue: #63c2de !default;
 $pastel-red:  #FE6960 !default; 
 $pastel-yellow: #FEB560 !default;
 $pastel-blue: #6360FE !default;
-$light-primary: #ae9fb3 !default;
 
 $primary:       $purple;
 $success:       $green;
@@ -44,3 +43,24 @@ $info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
 $secondary:     lighten($color: $primary, $amount: 30);
+
+$font-family-sans-serif:      'Nunito Sans', sans-serif,-apple-system, BlinkMacSystemFont, "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+
+$btn-border-radius:           10px !default;
+$btn-border-radius-sm:         10px !default;
+$btn-padding-y:               15px!default;
+$btn-padding-x:               30px !default;
+$btn-font-size:               14px !default;
+$btn-font-weight:             600 !default;
+
+$btn-padding-y-sm:            10px !default;
+$btn-padding-x-sm:            20px !default;
+
+$modal-content-border-radius:       10px !default;
+
+$input-font-size:                       14px !default;
+
+$body-bg:                   lighten($color: $primary, $amount: 40) !default;
+
