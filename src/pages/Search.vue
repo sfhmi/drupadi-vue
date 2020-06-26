@@ -67,7 +67,7 @@
                         <div class="card border-0">
                             <div class="card-body date-flight" >
                                 <label class='text-muted'>Departure Date</label>
-                                <datepicker v-model='departureDateState.date' format='D, dd MMM yyyy' :disabled-dates="returnDateState.disabled"></datepicker>
+                                <datepicker v-model='departureDateState.date' format='D, dd MMM yyyy' :disabled-dates="departureDateState.disabled"  @selected="selectDate"></datepicker>
                             </div>
                             <img src="" alt="" class="calendar-icon">
                         </div>
