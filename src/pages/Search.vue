@@ -101,8 +101,27 @@
                     <ListTravelers :travelers="travelers" />
                 </div>
             </div>
+             <div class="row">
+                <div class="col-lg-12 text-right">
+                    <router-link :to="{ 
+                        name:'Flights', 
+                        query: { 
+                            type: flightType
+                        } , 
+                        params: {
+                            id: trip_id, 
+                            departureDate: departureDateState.date, 
+                            retunrDate: returnDateState.date,
+                            departureAirport: selectedDeparture,
+                            arrivalAirport: selectedArrival,
+                            flightType: flightType,
+                            travelers: travelers,
+                            } 
+                        }" class="btn btn-primary text-white text-decoration-none">Search flight
+                    </router-link>
+                </div>
+            </div>
         </div>
-        
         <AddPassengerModal 
             :travelers.sync="travelers"
             :modal_passenger_is_open.sync="modal_passenger_is_open"
@@ -120,6 +139,7 @@ import Datepicker from 'vuejs-datepicker';
 
 export default {
     name: 'Search',
+    props: ["passengers"],
     components: {
         Breadcrumb,
         Datepicker,
@@ -128,7 +148,7 @@ export default {
     },
     data() {
         return {
-          
+            trip_id: 1,
             modal_passenger_is_open: false,
             passengerList: [],
             passenger_selected: [],
@@ -219,13 +239,18 @@ export default {
             add_me: false,
         }
     },
+
     updated() {
-      this.travelers.filter(data => data.employee_id == this.user.employee_id).length > 0 ? (this.add_me = true) : (this.add_me = false);
+        this.travelers.filter(data => data.employee_id == this.user.employee_id).length > 0 ? (this.add_me = true) : (this.add_me = false);
     },
     mounted() {
+        if (this.passengers) {
+            this.passengers.forEach(traveler => {
+                this.travelers.push(traveler)
+            })
+        }
         let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname  + '?' + 'type=' + this.flightType.toString();
         history.pushState(newUrl,'',newUrl);
-
     },
     methods: {
         changeType: function (type) {

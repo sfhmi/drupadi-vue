@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <Search />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Search from './pages/Search.vue';
-
 export default {
   name: 'App',
-  components: {
-    Search
-  }
 }
 </script>
 
@@ -22,8 +17,7 @@ export default {
   @import '@/assets/scss/components/_datepicker.scss';
   @import '@/assets/scss/components/_forms.scss';
   @import '@/assets/scss/components/_modals.scss';
-
-
+  
   #app {
     background-color: lighten($color: $primary, $amount: 40);
     min-height: 100vh;

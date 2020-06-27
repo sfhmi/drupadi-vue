@@ -15,8 +15,6 @@ export default {
 }
 </script>
 
-
-
 <style scope lang="scss">
     .breadcrumb {
         background-color: lighten($color: $primary, $amount: 35) !important;
@@ -39,7 +37,7 @@ export default {
                 }
             }
             &:before {
-                // content: url("../../assets/images/icons/chevron-right.svg");
+                content: url("../assets/images/icons/chevron-right.svg") !important;
                 line-height: 0em;
             }
 
