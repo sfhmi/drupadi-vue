@@ -3,9 +3,11 @@
 		<div class="card-travelers" :key="index" v-for="(traveler, index) in travelers">
 			<div class="card-body d-flex flex-row align-items-center">
 				<figure class="traveler-picture" v-if="traveler.image == ''">
-					<img src alt />
+					<img src="@/assets/images/icons/user-default.svg" alt />
 				</figure>
-				<figure class="traveler-picture" v-else></figure>
+				<figure class="traveler-picture" v-else>
+					<img :src="traveler.image" alt />
+        </figure>
 				<div class="traveler-profile">
 					<p>{{ traveler.title ? traveler.title + ' ' : '' }}{{ traveler.name }}</p>
 					<small

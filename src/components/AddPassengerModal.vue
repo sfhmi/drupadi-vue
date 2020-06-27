@@ -86,7 +86,7 @@
              <div class="py-0 px-0 border-0">
                 <div class="guest-form" :class='guest_is_open ? "guest-modal-open" : "guest-modal-close" '>
                     <div class="d-flex flex-row align-items-center pt-2 px-3" :key="adult.id+index" v-for='(adult, index) in adult_guest'>
-                            <img src="https://api.adorable.io/avatars/285/abott@adorable.png" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
+                            <img src="@/assets/images/icons/user-default.svg" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
                         <p class="mr-2 mb-0" style="width: 80px;">{{ adult.age_type }}</p>
                         <div class="position-relative">
                             <select name="" id="" class='form-control mr-2'  v-model='adult.title'  @change='titleValidation(adult, index)' style="width: 100px; -webkit-appearance: none; padding-right: 20px;">
@@ -102,7 +102,7 @@
                         </button>
                     </div>
                     <div class="d-flex flex-row align-items-center pt-2 px-3" :key="child.id+index" v-for='(child, index) in child_guest'>
-                        <img src="https://api.adorable.io/avatars/285/abott@adorable.png" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
+                        <img src="@/assets/images/icons/user-default.svg" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
                         <p class="mr-2 mb-0"  style="width: 80px;">{{ child.age_type }} </p>
                         <div class="position-relative">
                             <select name="" id="" class='form-control mr-2'
@@ -119,7 +119,7 @@
                         </button>
                     </div>
                     <div class="d-flex flex-row align-items-center pt-2 px-3" :key="infant.id+index" v-for='(infant, index) in infant_guest'>
-                            <img src="https://api.adorable.io/avatars/285/abott@adorable.png" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
+                            <img src="@/assets/images/icons/user-default.svg" class="mr-2" alt="" width="35" height="35" style="border-radius: 50%;">
                         <p class="mr-2 mb-0"  style="width: 80px;">{{ infant.age_type }}</p>
                         <div class="position-relative">
                             <select name="" id="" class='form-control mr-2'

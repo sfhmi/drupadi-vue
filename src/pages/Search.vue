@@ -40,6 +40,7 @@
                     </div>
                     <button class="py-1 px-3 m-1 rounded-circle" type="button" id="switch-destination" 
                         @click='switchDestination'>
+                        <img src="@/assets/images/icons/refresh-ccw.svg" alt="">
                     </button>
                 </div>
                 <div class="col-lg-3 select-destinations">
