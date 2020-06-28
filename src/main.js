@@ -9,7 +9,6 @@ import 'regenerator-runtime/runtime';
 // plugins
 import vSelect from 'vue-select';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-select/dist/vue-select.css';
 // import path from 'core-js/es';
@@ -20,8 +19,8 @@ import Search from './pages/Search';
 import Flight from './pages/Flight';
 
 
-// font awesome library, you need to register icon to library.add and import
-// ex 
+// Font awesome library, you need to register icon to library.add and import
+// Ex 
 // import { faArrowRight, faUserSecret } from '@fortawesome/free-solid-svg-icons'
 // library.add(faArrowRight, faUserSecret)
 import { library } from '@fortawesome/fontawesome-svg-core'

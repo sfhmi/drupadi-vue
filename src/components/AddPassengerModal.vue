@@ -65,21 +65,21 @@
                 <div class="d-flex flex-row align-items-center" v-if='guest_is_open == true'>
                     <div class="d-flex flex-row align-items-center">
                         <p class="mb-0 mr-1">Adult</p>
-                        <button class="btn-outline-primary" @click='addGuest("adultDec")'><i class="fa fa-minus fa-fw"></i></button>
+                        <button class="btn btn-outline-primary" @click='addGuest("adultDec")'><i class="fa fa-minus fa-fw"></i></button>
                         <p class="mx-2 my-0">{{ adult_guest.length }}</p>
-                        <button class="btn-outline-primary" @click='addGuest("adultInc")'><i class="fa fa-plus fa-fw"></i></button>
+                        <button class="btn btn-outline-primary" @click='addGuest("adultInc")'><i class="fa fa-plus fa-fw"></i></button>
                     </div>
                     <div class="d-flex flex-row align-items-center mx-3">
                         <p class="mb-0 mr-1">Child</p>
-                        <button class="btn-outline-primary" @click='addGuest("childDec")'><i class="fa fa-minus fa-fw"></i></button>
+                        <button class="btn btn-outline-primary" @click='addGuest("childDec")'><i class="fa fa-minus fa-fw"></i></button>
                         <p  class="mx-2 my-0">{{ child_guest.length  }}</p>
-                        <button class="btn-outline-primary" @click='addGuest("childInc")'><i class="fa fa-plus fa-fw"></i></button>
+                        <button class="btn btn-outline-primary" @click='addGuest("childInc")'><i class="fa fa-plus fa-fw"></i></button>
                     </div>
                     <div class="d-flex flex-row align-items-center">
                         <p class="mb-0 mr-1">Infant</p>
-                        <button class="btn-outline-primary" @click='addGuest("infantDec")'><i class="fa fa-minus fa-fw"></i></button>
+                        <button class="btn btn-outline-primary" @click='addGuest("infantDec")'><i class="fa fa-minus fa-fw"></i></button>
                         <p  class="mx-2 my-0">{{ infant_guest.length }}</p>
-                        <button class="btn-outline-primary" @click='addGuest("infantInc")'><i class="fa fa-plus fa-fw"></i></button>
+                        <button class="btn btn-outline-primary" @click='addGuest("infantInc")'><i class="fa fa-plus fa-fw"></i></button>
                     </div>
                 </div> 
             </div>

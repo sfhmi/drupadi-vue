@@ -11,13 +11,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/assets/scss/components/_buttons.scss';
-  @import '@/assets/scss/components/_custom-checkbox.scss';
-  @import '@/assets/scss/components/_cards.scss';
-  @import '@/assets/scss/components/_datepicker.scss';
-  @import '@/assets/scss/components/_forms.scss';
-  @import '@/assets/scss/components/_modals.scss';
-  
+  @import "@/assets/scss/app.scss";
   #app {
     background-color: lighten($color: $primary, $amount: 40);
     min-height: 100vh;
