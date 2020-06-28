@@ -38,7 +38,11 @@
                 <hr v-if='selectedDeparture'>
                 <div class="row">
                     <div class="col-lg-12" >
-                        <SelectedFlight  v-if='selectedDeparture'  :selectedDeparture="selectedDeparture" />
+                        <SelectedFlight  
+                        v-if='selectedDeparture'  
+                        :selectedDeparture="selectedDeparture" 
+                        @changeFlight="changeFlight" 
+                        />
                     </div>
                 </div>
                 <hr class="my-4">
@@ -110,7 +114,7 @@
                                 <CardFlight 
                                 :computedDeparture="computedDeparture" 
                                 :moreFlightOptions="moreFlightOptions"
-                                />
+                                @selectFlight="selectFlight"/>
                             </div>
                         </div>
                     </div>
@@ -128,6 +132,7 @@ import SelectedFlight from '@/components/SelectedFlight.vue';
 import FilterSidebar from '@/components/FilterSidebar.vue';
 import CardFlight from '@/components/CardFlight.vue';
 import axios from 'axios';
+// import fakeAPI from '../static/fakeAPI.json';
 
 export default {
     name: "Flight",
@@ -461,7 +466,7 @@ export default {
     },
     mounted() {
         console.log('the component has been mounted')
-        axios.get('fakeAPI.json')
+        axios.get('../static/fakeAPI.json')
         .then(response => {
             console.log(response)
         }).catch(error => {
@@ -473,6 +478,43 @@ export default {
         this.infantCount = this.travelers.filter(traveler => traveler.age_type == 'infant').length
     },
      methods: {
+        selectFlight: function (journey) {
+            // document.querySelector("body").style.overflow = "hidden";
+            // this.screen_loading = true
+            // $.request('bookings::onSelectFlight', {
+            //     data: {
+            //         journey: journey,
+            //         flightTime: flightTime
+            //     },
+            //     success: response => {
+            //         if (response.result) {
+            //             window.location.href = response.result
+            //         }
+            //         if (flightTime == "departure" && this.flightType == 'round_trip') {
+            //             this.flightTime = 'return'
+            //             this.selectedDeparture = journey
+            //             this.arrayJourneys = this.returnJourneys
+            //             window.scrollTo({top: 0, behavior: 'smooth'});
+            //             this.sortBy(this.sortedBy)
+            //         }
+            //         this.screen_loading = false
+            //         document.querySelector("body").style.overflow = "visible";
+            //         this.sortBy(this.sortedBy)
+                   
+            //     },
+            //     error: error => {
+            //         document.querySelector("body").style.overflow = "visible";
+            //         this.screen_loading = false
+            //         $.oc.flashMsg({ test: error.responseText, class: 'error' })
+            //     }
+            // })
+            this.selectedDeparture = journey
+        },
+
+        changeFlight: function (value) {
+            this.selectedDeparture = value
+            this.flightTime = "departure"
+        },
         // requestAPI: function (data, count) {
             // $.request('bookings::onGetSchedules', {
             //     data: {
@@ -765,43 +807,6 @@ export default {
             // this.computedDeparture.journey.forEach((jrny, idx) => {
             //     jrny.selectedFare[0] = this.computedDeparture.filtered_fare[idx][0]
             // })
-        // },
-
-        // selectFlight: function (journey, flightTime) {
-            // document.querySelector("body").style.overflow = "hidden";
-            // this.screen_loading = true
-            // $.request('bookings::onSelectFlight', {
-            //     data: {
-            //         journey: journey,
-            //         flightTime: flightTime
-            //     },
-            //     success: response => {
-            //         if (response.result) {
-            //             window.location.href = response.result
-            //         }
-            //         if (flightTime == "departure" && this.flightType == 'round_trip') {
-            //             this.flightTime = 'return'
-            //             this.selectedDeparture = journey
-            //             this.arrayJourneys = this.returnJourneys
-            //             window.scrollTo({top: 0, behavior: 'smooth'});
-            //             this.sortBy(this.sortedBy)
-            //         }
-            //         this.screen_loading = false
-            //         document.querySelector("body").style.overflow = "visible";
-            //         this.sortBy(this.sortedBy)
-                   
-            //     },
-            //     error: error => {
-            //         document.querySelector("body").style.overflow = "visible";
-            //         this.screen_loading = false
-            //         $.oc.flashMsg({ test: error.responseText, class: 'error' })
-            //     }
-            // })
-        // },
-
-        // changeFlight: function (flightType) {
-            // this["selected" + flightType] = null
-            // this.flightTime = 'departure'
         // },
 
         // sortBy: function (data) {

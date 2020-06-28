@@ -263,9 +263,9 @@
                                                  
                                             </figure>
                                             <p class="mb-0 mr-2">Rp {{ agent.totalFare | currency }}</p>
-                                            <!-- <button @click="selectFlight(journey, 'departure')"
+                                            <button @click="selectFlight(journey, 'departure')"
                                                 class="btn btn-primary  btn-sm" 
-                                                :disabled="computedDeparture.journey[index].selectedFare[0].policy_level.compliance_level == 'black'">Choose</button> -->
+                                                :disabled="computedDeparture.journey[index].selectedFare[0].policy_level.compliance_level == 'black'">Choose</button>
                                         </div>
                                     </div>
                                 </div>
@@ -287,6 +287,43 @@ export default {
         return {
             moment: moment,
         }
+    },
+    methods: {
+        selectFlight: function (journey) {
+            // document.querySelector("body").style.overflow = "hidden";
+            // this.screen_loading = true
+            // $.request('bookings::onSelectFlight', {
+            //     data: {
+            //         journey: journey,
+            //         flightTime: flightTime
+            //     },
+            //     success: response => {
+            //         if (response.result) {
+            //             window.location.href = response.result
+            //         }
+            //         if (flightTime == "departure" && this.flightType == 'round_trip') {
+            //             this.flightTime = 'return'
+            //             this.selectedDeparture = journey
+            //             this.arrayJourneys = this.returnJourneys
+            //             window.scrollTo({top: 0, behavior: 'smooth'});
+            //             this.sortBy(this.sortedBy)
+            //         }
+            //         this.screen_loading = false
+            //         document.querySelector("body").style.overflow = "visible";
+            //         this.sortBy(this.sortedBy)
+                   
+            //     },
+            //     error: error => {
+            //         document.querySelector("body").style.overflow = "visible";
+            //         this.screen_loading = false
+            //         $.oc.flashMsg({ test: error.responseText, class: 'error' })
+            //     }
+            // })
+            this.flightTime = 'return'
+            this.$emit('selectFlight', journey)
+            // this.selectedDeparture = journey
+
+        },
     },
     filters: {
         currency: function (value) {

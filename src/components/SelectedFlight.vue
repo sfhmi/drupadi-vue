@@ -7,8 +7,7 @@
                 <p class="mb-0">{{ selectedDeparture.departure_airport_city }} to
                     {{ selectedDeparture.arrival_airport_city }}</p>
             </div>
-            <button role="button" @click="changeFlight()"
-                class="mb-0 text-white bg-transparent border-0">Change Departure Flight</button>
+            <button role="button" @click="changeFlight(null)" class="mb-0 text-white bg-transparent border-0">Change Departure Flight</button>
         </div>
         <div class="card-body">
             <div class="row mb-3">
@@ -86,13 +85,8 @@ export default {
         }
     },
     methods: {
-        changeFlight: function () {
-            let select = this.selectedDeparture
-            console.log(select)
-            select = null
-            console.log(select)
-
-            // this.selectedDeparture = null
+        changeFlight: function (value) {
+            this.$emit('changeFlight', value)
         }
     },
     filters: {
