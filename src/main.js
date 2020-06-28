@@ -20,7 +20,6 @@ import Search from './pages/Search';
 import Flight from './pages/Flight';
 
 
-
 // font awesome library, you need to register icon to library.add and import
 // ex 
 // import { faArrowRight, faUserSecret } from '@fortawesome/free-solid-svg-icons'
@@ -38,6 +37,8 @@ Vue.use(VueRouter);
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
+
+// Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 // router configuration

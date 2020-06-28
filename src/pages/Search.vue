@@ -123,8 +123,7 @@
             </div>
         </div>
         <AddPassengerModal 
-            :travelers.sync="travelers"
-            :modal_passenger_is_open.sync="modal_passenger_is_open"
+            :travelers="travelers"
             :user="user"
             @savePassengerList="updatePassenger"
         />

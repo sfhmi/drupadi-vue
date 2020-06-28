@@ -248,14 +248,11 @@ export default {
                 } else {
                     passengerList.forEach(passenger => {
                         if (passenger.name == this.user.name) {
-                            // this.travelers.push(this.user)
-                            this.$emit('savePassengerList', this.user)
+                            this.travelers.push(this.user)
                         } else if (passenger.name !== "") {
-                            // this.travelers.push(passenger)
-                            this.$emit('savePassengerList', passenger)
+                            this.travelers.push(passenger)
                         } else {
-                            // this.travelers.push(passenger)
-                            this.$emit('savePassengerList', passenger)
+                            this.travelers.push(passenger)
 
                         }
                     })

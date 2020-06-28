@@ -1,0 +1,76 @@
+.filter-sidebar { 
+    p {
+        font-weight: 600;
+    }
+    label {
+        font-weight: 600;
+        font-size: 14px;
+    }
+    #accordion {
+        .card {
+            border: 0px;
+            padding: 10px 10px 10px 10px;
+            margin-bottom: 0px;
+            .card-header {
+                background-color: transparent;
+                padding: 0px;
+                border: none;
+                h5 {
+                    margin-bottom: 0px;
+                    // font-weight: bold;
+                    font-size: 16px;
+                    button {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 0px !important;
+                        outline: none;
+                        box-shadow: none;
+                        p {
+                            font-size: 16px;
+                            font-weight: 700;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+
+            .card-body {
+                button {
+                    font-weight: 600;
+                }
+            }
+
+            .card-header {
+                margin-bottom: 10px;
+            }
+        }
+
+        .vue-slider {
+            .vue-slider-dot-tooltip {
+                display: none;
+            }
+            .vue-slider-rail {
+                background-color: lighten($color: $primary, $amount: 30);
+                height: 2px;
+                .vue-slider-process {
+                    background-color: $primary;
+                }
+                .vue-slider-dot,
+                .vue-slider-dot-hover {
+                    background-color: $primary;
+                    border-radius: 50%;
+                    width: 10px;
+                    height: 10px;
+                    cursor: pointer;
+                    .vue-slider-dot-handle {
+                        background-color: $primary;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
